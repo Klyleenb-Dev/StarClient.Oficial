@@ -1,96 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><img src="logo.png" alt="Logo" style="height:32px;display:inline-block;vertical-align:middle;margin-right:8px;">Star Client</title>
-  <meta name="description" content="Star Client - Performance, estilo e funcionalidades exclusivas para seu Minecraft.">
-  <meta property="og:title" content="Star Client">
-  <meta property="og:description" content="O melhor client para Minecraft, com mods, cosméticos e muito mais.">
-  <meta property="og:image" content="screenshot1.png">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Star Client — Performance e estilo para seu Minecraft</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Star Client — Performance, HUDs e cosméticos para elevar seu Minecraft. Baixe a versão mais recente com segurança." />
+  <link rel="canonical" href="https://klyleenb-dev.github.io/StarClientSS/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Star Client — Performance e estilo para seu Minecraft" />
+  <meta property="og:description" content="Star Client — Performance, HUDs e cosméticos para elevar seu Minecraft." />
+  <meta property="og:image" content="assets/img/og-screenshot.png" />
+  <meta property="og:url" content="https://klyleenb-dev.github.io/StarClientSS/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0ea5a4" />
+
+  <!-- Icons -->
+  <link rel="icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <!-- Prefetch / Preload important asset -->
+  <link rel="preload" href="assets/img/logo.svg" as="image" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Star Client",
+    "operatingSystem": "Minecraft (Java Edition)",
+    "applicationCategory": "Game",
+    "description": "Star Client: performance, HUDs e cosméticos para Minecraft.",
+    "url": "https://klyleenb-dev.github.io/StarClientSS/"
+  }
+  </script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <!-- Header -->
-  <header class="flex justify-between items-center px-8 py-4 bg-gray-950 shadow-lg sticky top-0 z-50">
-    <h1 class="text-2xl font-bold text-green-400">Star Client</h1>
-    <nav class="flex gap-6">
-      <a href="#features" class="hover:text-green-400">Funcionalidades</a>
-      <a href="#screenshots" class="hover:text-green-400">Screenshots</a>
-      <a href="#changelog" class="hover:text-green-400">Changelog</a>
-      <a href="#discord" class="hover:text-green-400">Discord</a>
-      <a href="#download" class="bg-green-500 px-4 py-2 rounded-lg font-semibold hover:bg-green-400 transition">Download</a>
-    </nav>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="assets/img/logo.svg" alt="Star Client logo" class="logo" />
+      <nav aria-label="Navegação principal">
+        <a href="#features">Funcionalidades</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download" class="cta-link">Download</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative h-[90vh] flex flex-col justify-center items-center text-center bg-cover bg-center" style="background-image: url('https://wallpapercave.com/wp/wp6609407.jpg');">
-    <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative z-10">
-      <h2 class="text-5xl font-extrabold mb-4">Eleve seu Minecraft com o <span class="text-green-400">Star Client</span></h2>
-      <p class="text-lg text-gray-300 mb-6">Performance, estilo e funcionalidades exclusivas em um só lugar.</p>
-      <a id="download" href="Star1.8.9.zip" class="bg-green-500 px-6 py-3 rounded-xl font-bold text-lg hover:bg-green-400 transition">⬇️ Baixar Agora</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h1 id="hero-title">Star Client — leve, rápido e bonito</h1>
+        <p class="lead">Melhore sua experiência em Minecraft com HUDs customizáveis, animações e cosméticos — sem complicação.</p>
 
-  <!-- Features -->
-  <section id="features" class="px-8 py-16 max-w-7xl mx-auto">
-    <h3 class="text-3xl font-bold text-center mb-12">✨ Funcionalidades</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">Novidades no Jogo</h4>
-        <p class="text-gray-300 text-sm">Receba atualizações direto no client para sempre estar por dentro.</p>
+        <div class="hero-cta">
+          <a id="download-btn" class="btn" href="#" download aria-label="Baixar o Star Client">⬇️ Baixar (carregando...)</a>
+          <span id="version-badge" class="version">—</span>
+        </div>
+
+        <p class="muted">Sem vírus. Sem mods proibidos. Não afiliado à Mojang/Microsoft.</p>
       </div>
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">Mods Integrados</h4>
-        <p class="text-gray-300 text-sm">HUDs, animações e personalizações de forma simples e rápida.</p>
+
+      <div class="hero-right">
+        <img src="assets/img/hero-preview.png" alt="Preview do Star Client em jogo" class="hero-img" />
       </div>
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">Cosméticos Exclusivos</h4>
-        <p class="text-gray-300 text-sm">Capas, skins e itens visuais únicos para você personalizar seu jogo.</p>
+    </section>
+
+    <section id="features" class="container features" aria-labelledby="features-title">
+      <h2 id="features-title">Funcionalidades</h2>
+      <div class="grid-3">
+        <article>
+          <h3>Atualizações automáticas</h3>
+          <p>O client verifica a versão mais recente e baixa automaticamente (se você permitir).</p>
+        </article>
+        <article>
+          <h3>Mods integrados</h3>
+          <p>HUDs, animações e ajustes visuais fáceis de configurar.</p>
+        </article>
+        <article>
+          <h3>Cosméticos exclusivos</h3>
+          <p>Capas e efeitos visuais que não modificam jogabilidade competitiva.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="screenshots" class="container">
+      <h2>Screenshots</h2>
+      <div class="screenshots-grid" role="list">
+        <img src="assets/img/screenshot1.png" alt="Screenshot 1" role="listitem"/>
+        <img src="assets/img/screenshot2.png" alt="Screenshot 2" role="listitem"/>
+        <img src="assets/img/screenshot3.png" alt="Screenshot 3" role="listitem"/>
+      </div>
+    </section>
+
+    <section id="download" class="container">
+      <h2>Download seguro</h2>
+      <p>O arquivo fornecido é o build oficial — confira a versão e baixe com segurança.</p>
+      <pre class="note">Dica: confira o hash do .jar no repositório de updates antes de rodar.</pre>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Star Client — Desenvolvido por klyleenb-dev</small>
+      <div class="social">
+        <a href="https://discord.gg/..." rel="noopener" target="_blank">Discord</a>
+        <a href="https://github.com/klyleenb-dev" rel="noopener" target="_blank">GitHub</a>
       </div>
     </div>
-  </section>
-
-  <!-- Screenshots -->
-  <section id="screenshots" class="px-8 py-16 max-w-6xl mx-auto">
-    <h3 class="text-3xl font-bold text-center mb-12">📸 Screenshots</h3>
-    <div class="grid md:grid-cols-2 gap-6">
-      <img src="screenshot1.png" alt="StarClient News" class="rounded-xl shadow-lg">
-      <img src="screenshot2.png" alt="StarClient Mods" class="rounded-xl shadow-lg">
-      <img src="screenshot3.png" alt="StarClient Cosmetics" class="rounded-xl shadow-lg">
-      <img src="screenshot4.png" alt="StarClient Spotify" class="rounded-xl shadow-lg">
-      <img src="screenshot5.png" alt="StarClient Mini Games" class="rounded-xl shadow-lg">
-    </div>
-  </section>
-
-  <!-- Changelog -->
-  <section id="changelog" class="bg-gray-950 px-8 py-16">
-    <h3 class="text-3xl font-bold text-center mb-12">📜 Changelog</h3>
-    <div class="max-w-4xl mx-auto space-y-4 text-gray-300">
-      <ul class="list-disc list-inside space-y-2">
-        <li>+ Nova versão 2.1 lançada com OptiFine HD U M5 integrado</li>
-        <li>+ Mais de 10 novos cosméticos exclusivos</li>
-        <li>+ Melhorias de HUD e novos estilos</li>
-        <li>+ Traduções para múltiplos idiomas</li>
-        <li>- Removido player de música para aumentar a performance</li>
-        <li>+ Correções gerais e maior estabilidade</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Discord -->
-  <section id="discord" class="px-8 py-16 max-w-4xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-6">💬 Junte-se à Comunidade</h3>
-    <p class="text-gray-300 mb-6">Entre no nosso servidor do Discord para suporte, novidades e jogar com a comunidade Star!</p>
-    <a href="https://discord.gg/seuconvite" class="bg-indigo-600 px-6 py-3 rounded-xl font-bold text-lg hover:bg-indigo-500 transition">Entrar no Discord</a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-950 text-center py-6 text-gray-500 text-sm">
-    © 2025 Star Client — Criado por Klyleenb | Não afiliado à Mojang/Microsoft
   </footer>
+
+  <!-- Script: busca version.json do repositório de updates e atualiza botão -->
+  <script>
+    (function(){
+      const UPDATE_REPO_VERSION_JSON = "https://raw.githubusercontent.com/SEU_USER/StarClientUpdate/main/version.json";
+      const downloadBtn = document.getElementById("download-btn");
+      const versionBadge = document.getElementById("version-badge");
+      const yearEl = document.getElementById("year");
+      yearEl.textContent = new Date().getFullYear();
+
+      fetch(UPDATE_REPO_VERSION_JSON)
+        .then(res => {
+          if(!res.ok) throw new Error("Não foi possível obter versão");
+          return res.json();
+        })
+        .then(info => {
+          // info: { "version":"v2.3.0", "url":"https://.../StarClient.jar" }
+          versionBadge.textContent = info.version || "";
+          downloadBtn.href = info.url || "#";
+          downloadBtn.textContent = "⬇️ Baixar " + (info.version || "");
+          downloadBtn.rel = "nofollow noopener";
+        })
+        .catch(err => {
+          // fallback: link direto que você já tem
+          console.warn("Não carregou version.json:", err);
+          downloadBtn.textContent = "⬇️ Baixar (link direto)";
+          // você pode deixar um link estático aqui como fallback:
+          // downloadBtn.href = "https://klyleenb-dev.github.io/StarClientSS/update/StarClient.jar";
+        });
+    })();
+  </script>
 </body>
 </html>
