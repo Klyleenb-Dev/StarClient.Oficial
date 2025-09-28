@@ -3,62 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StarClient092</title>
-  <link rel="icon" href="logo.png">
+  <title>Star Client</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="logo">
-      <h1>StarClient092</h1>
-    </div>
-    <nav>
-      <a href="#features">Recursos</a>
-      <a href="#screens">Screenshots</a>
-      <a href="#download">Download</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div>
-        <h2>O Client que une performance e estilo</h2>
-        <p>StarClient092 é um client otimizado para Minecraft 1.8.9 focado em estabilidade, baixa latência e aparência moderna.</p>
-        <a id="download" href="Star1.8.9.zip" class="btn">Baixar agora</a>
-      </div>
-    </section>
-
-    <section id="features">
-      <h3>Recursos principais</h3>
-      <ul>
-        <li>Configuração pronta para performance</li>
-        <li>Interface visual moderna e personalizável</li>
-        <li>Compatível com mods e recursos clássicos 1.8.9</li>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <img src="logo.png" alt="Star Client Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#features">Recursos</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+        <li><a href="#contact">Contato</a></li>
       </ul>
-    </section>
+      <a href="Star1.8.9.zip" class="btn-download">Baixar</a>
+    </div>
+  </nav>
 
-    <section id="screens">
-      <h3>Screenshots</h3>
-      <div class="gallery">
-        <img src="screenshot3.png" alt="screenshot">
-        <img src="screenshot4.png" alt="screenshot">
-        <img src="screenshot5.png" alt="screenshot">
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Star Client</h1>
+        <p>Um client moderno para Minecraft, otimizado para performance e estilo.</p>
+        <a href="Star1.8.9.zip" class="btn-primary">Baixar Agora</a>
       </div>
-    </section>
+      <div class="hero-image">
+        <img src="screenshot1.png" alt="Screenshot">
+      </div>
+    </div>
+  </section>
 
-    <section class="install">
-      <h3>Instalação rápida</h3>
-      <ol>
-        <li>Baixe o arquivo ZIP.</li>
-        <li>Extraia para uma pasta.</li>
-        <li>Siga as instruções do launcher.</li>
-      </ol>
-    </section>
-  </main>
+  <!-- Recursos -->
+  <section id="features" class="features">
+    <h2>Recursos</h2>
+    <div class="features-grid">
+      <div class="card">🚀 <h3>Performance</h3><p>Mais FPS e jogabilidade suave.</p></div>
+      <div class="card">🎨 <h3>Customização</h3><p>Mods, HUDs e temas personalizáveis.</p></div>
+      <div class="card">🛡️ <h3>Segurança</h3><p>Experiência estável e confiável.</p></div>
+    </div>
+  </section>
 
-  <footer>
-    Feito por Klyleenb • 2025
+  <!-- Screenshots -->
+  <section id="screenshots" class="screenshots">
+    <h2>Screenshots</h2>
+    <div class="screenshot-grid">
+      <img src="screenshot1.png" alt="screenshot">
+      <img src="screenshot2.png" alt="screenshot">
+      <img src="screenshot3.png" alt="screenshot">
+      <img src="screenshot4.png" alt="screenshot">
+      <img src="screenshot5.png" alt="screenshot">
+    </div>
+  </section>
+
+  <!-- Changelog -->
+  <section id="changelog" class="changelog">
+    <h2>Changelog</h2>
+    <div class="log-entry new">Crosshair Mod: 3 new styles</div>
+    <div class="log-entry new">Animations Mod: Smooth sneak setting</div>
+    <div class="log-entry new">Hotbar Mod: New option to use the client theme</div>
+    <div class="log-entry new">Hotbar Mod: New pickup animation setting</div>
+    <div class="log-entry new">New Mod: Female gender cosmetic</div>
+    <div class="log-entry new">New Mod: Cat ears</div>
+    <div class="log-entry new">Client: Added more Language support</div>
+    <div class="log-entry new">Client: Added UI sounds</div>
+    <div class="log-entry new">Client: Added macOS dock icons</div>
+    <div class="log-entry new">HUD: Added new HUD styles</div>
+    <div class="log-entry new">HUD: Added Blurred background option</div>
+    <div class="log-entry new">HUD: Added Mojangles font option</div>
+    <div class="log-entry new">Menus: GuiIngameMenu now uses the Glide style</div>
+    <div class="log-entry new">Cosmetics: Added a ton of new capes</div>
+    <div class="log-entry new">Cosmetics: Made Custom capes better</div>
+    <div class="log-entry new">Mod Menu: 10+ new themes</div>
+    <div class="log-entry new">Mod Menu: New home screen</div>
+    <div class="log-entry new">Mod Menu: New Minigames</div>
+    <div class="log-entry improved">Mod Menu: Back buttons in more places</div>
+    <div class="log-entry improved">Mod Menu: Improve the mod menu design</div>
+    <div class="log-entry improved">Mod Menu: Better search system</div>
+    <div class="log-entry improved">Mod Menu: Type to search</div>
+    <div class="log-entry improved">Mod Menu: Arrow keys support</div>
+    <div class="log-entry improved">Mod Menu: Ban warning for modules</div>
+    <div class="log-entry improved">Client: Click out of bounds closes GUIs</div>
+    <div class="log-entry improved">Client: Setup menu redesign</div>
+    <div class="log-entry improved">Client: Glide checks for updates</div>
+    <div class="log-entry improved">Client: Rebrand to Glide</div>
+    <div class="log-entry improved">Client: Linux & macOS compatibility</div>
+    <div class="log-entry improved">HudEditor: Shift modifier and tooltips</div>
+    <div class="log-entry improved">Cosmetics: Capes now save</div>
+    <div class="log-entry removed">Mods: Remove browser</div>
+    <div class="log-entry removed">Mods: Remove ViaVersion</div>
+    <div class="log-entry removed">Client: Remove Music player</div>
+    <div class="log-entry removed">Client: Remove Soar API</div>
+    <div class="log-entry removed">Client: Remove Soar Premium</div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="contact">
+    <h2>Contato</h2>
+    <p>Entre em contato pelo email: suporte@starclient.net</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Star Client. Todos os direitos reservados.</p>
   </footer>
 </body>
 </html>
