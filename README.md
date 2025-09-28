@@ -1,4 +1,4 @@
-# 🌟 StarClient092
+# 🌟 StarClient
 
 Site oficial do **StarClient092**.  
 Esse é um template simples em HTML + CSS feito para ser publicado no **GitHub Pages**.
