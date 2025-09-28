@@ -3,94 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><img src="logo.png" alt="Logo" style="height:32px;display:inline-block;vertical-align:middle;margin-right:8px;">Star Client</title>
-  <meta name="description" content="Star Client - Performance, estilo e funcionalidades exclusivas para seu Minecraft.">
-  <meta property="og:title" content="Star Client">
-  <meta property="og:description" content="O melhor client para Minecraft, com mods, cosméticos e muito mais.">
-  <meta property="og:image" content="screenshot1.png">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>StarClient092</title>
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <!-- Header -->
-  <header class="flex justify-between items-center px-8 py-4 bg-gray-950 shadow-lg sticky top-0 z-50">
-    <h1 class="text-2xl font-bold text-green-400">Star Client</h1>
-    <nav class="flex gap-6">
-      <a href="#features" class="hover:text-green-400">Funcionalidades</a>
-      <a href="#screenshots" class="hover:text-green-400">Screenshots</a>
-      <a href="#changelog" class="hover:text-green-400">Changelog</a>
-      <a href="#discord" class="hover:text-green-400">Discord</a>
-      <a href="#download" class="bg-green-500 px-4 py-2 rounded-lg font-semibold hover:bg-green-400 transition">Download</a>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+      <h1>StarClient092</h1>
+    </div>
+    <nav>
+      <a href="#features">Recursos</a>
+      <a href="#screens">Screenshots</a>
+      <a href="#download">Download</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="relative h-[90vh] flex flex-col justify-center items-center text-center bg-cover bg-center" style="background-image: url('https://wallpapercave.com/wp/wp6609407.jpg');">
-    <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative z-10">
-      <h2 class="text-5xl font-extrabold mb-4">Eleve seu Minecraft com o <span class="text-green-400">Star Client</span></h2>
-      <p class="text-lg text-gray-300 mb-6">Performance, estilo e funcionalidades exclusivas em um só lugar.</p>
-      <a id="download" href="Star1.8.9.zip" class="bg-green-500 px-6 py-3 rounded-xl font-bold text-lg hover:bg-green-400 transition">⬇️ Baixar Agora</a>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section id="features" class="px-8 py-16 max-w-7xl mx-auto">
-    <h3 class="text-3xl font-bold text-center mb-12">✨ Funcionalidades</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">Novidades no Jogo</h4>
-        <p class="text-gray-300 text-sm">Receba atualizações direto no client para sempre estar por dentro.</p>
+  <main>
+    <section class="hero">
+      <div>
+        <h2>O Client que une performance e estilo</h2>
+        <p>StarClient092 é um client otimizado para Minecraft 1.8.9 focado em estabilidade, baixa latência e aparência moderna.</p>
+        <a id="download" href="Star1.8.9.zip" class="btn">Baixar agora</a>
       </div>
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">Mods Integrados</h4>
-        <p class="text-gray-300 text-sm">HUDs, animações e personalizações de forma simples e rápida.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold mb-2">Cosméticos Exclusivos</h4>
-        <p class="text-gray-300 text-sm">Capas, skins e itens visuais únicos para você personalizar seu jogo.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Screenshots -->
-  <section id="screenshots" class="px-8 py-16 max-w-6xl mx-auto">
-    <h3 class="text-3xl font-bold text-center mb-12">📸 Screenshots</h3>
-    <div class="grid md:grid-cols-2 gap-6">
-      <img src="screenshot1.png" alt="StarClient News" class="rounded-xl shadow-lg">
-      <img src="screenshot2.png" alt="StarClient Mods" class="rounded-xl shadow-lg">
-      <img src="screenshot3.png" alt="StarClient Cosmetics" class="rounded-xl shadow-lg">
-      <img src="screenshot4.png" alt="StarClient Spotify" class="rounded-xl shadow-lg">
-      <img src="screenshot5.png" alt="StarClient Mini Games" class="rounded-xl shadow-lg">
-    </div>
-  </section>
-
-  <!-- Changelog -->
-  <section id="changelog" class="bg-gray-950 px-8 py-16">
-    <h3 class="text-3xl font-bold text-center mb-12">📜 Changelog</h3>
-    <div class="max-w-4xl mx-auto space-y-4 text-gray-300">
-      <ul class="list-disc list-inside space-y-2">
-        <li>+ Nova versão 2.1 lançada com OptiFine HD U M5 integrado</li>
-        <li>+ Mais de 10 novos cosméticos exclusivos</li>
-        <li>+ Melhorias de HUD e novos estilos</li>
-        <li>+ Traduções para múltiplos idiomas</li>
-        <li>- Removido player de música para aumentar a performance</li>
-        <li>+ Correções gerais e maior estabilidade</li>
+    <section id="features">
+      <h3>Recursos principais</h3>
+      <ul>
+        <li>Configuração pronta para performance</li>
+        <li>Interface visual moderna e personalizável</li>
+        <li>Compatível com mods e recursos clássicos 1.8.9</li>
       </ul>
-    </div>
-  </section>
+    </section>
 
-  <!-- Discord -->
-  <section id="discord" class="px-8 py-16 max-w-4xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-6">💬 Junte-se à Comunidade</h3>
-    <p class="text-gray-300 mb-6">Entre no nosso servidor do Discord para suporte, novidades e jogar com a comunidade Star!</p>
-    <a href="https://discord.gg/seuconvite" class="bg-indigo-600 px-6 py-3 rounded-xl font-bold text-lg hover:bg-indigo-500 transition">Entrar no Discord</a>
-  </section>
+    <section id="screens">
+      <h3>Screenshots</h3>
+      <div class="gallery">
+        <img src="screenshot3.png" alt="screenshot">
+        <img src="screenshot4.png" alt="screenshot">
+        <img src="screenshot5.png" alt="screenshot">
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-950 text-center py-6 text-gray-500 text-sm">
-    © 2025 Star Client — Criado por Klyleenb | Não afiliado à Mojang/Microsoft
+    <section class="install">
+      <h3>Instalação rápida</h3>
+      <ol>
+        <li>Baixe o arquivo ZIP.</li>
+        <li>Extraia para uma pasta.</li>
+        <li>Siga as instruções do launcher.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    Feito por Klyleenb • 2025
   </footer>
 </body>
 </html>
