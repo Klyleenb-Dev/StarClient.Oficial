@@ -3,8 +3,8 @@
   --bg:#071023;
   --panel: rgba(255,255,255,0.03);
   --glass: rgba(255,255,255,0.04);
-  --accent1: #7c5cff;
-  --accent2: #26d0ce;
+  --accent1: #005c32;
+  --accent2: #39ff77;
   --muted: rgba(255,255,255,0.6);
   --text: #e6eef8;
   --radius: 14px;
@@ -64,4 +64,15 @@ body{
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;gap:16px}
   .hero-right{order:-1}
+}
+
+
+
+.btn, .cta, .secondary {
+  transition: all 0.25s ease;
+  transform: translateY(0);
+}
+.btn:hover, .cta:hover, .secondary:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.45);
 }
