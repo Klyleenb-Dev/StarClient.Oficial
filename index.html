@@ -1,115 +1,50 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Star Client | Cliente Moderno de Minecraft Otimizado</title>
-    <meta name="description" content="Baixe o Star Client, o cliente de Minecraft focado em performance e customização. Aumente seu FPS, personalize mods, HUDs e tenha uma jogabilidade suave e segura.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-    <nav class="navbar">
-        <div class="container nav-container">
-            <img src="logo.png" alt="Star Client Logo" class="logo">
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#features">Recursos</a></li>
-                <li><a href="#screenshots">Screenshots</a></li>
-                <li><a href="#changelog">Changelog</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <a href="Star1.8.9.zip" class="btn-download">Baixar</a>
-        </div>
-    </nav>
+# Agora vamos editar o index.html para adicionar os 3 links com os SVGs
+index_path = "/mnt/data/StarClient.Oficial-main/StarClient.Oficial-main/index.html"
 
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Star Client</h1>
-                <p>Um client moderno para Minecraft, otimizado para performance e estilo.</p>
-                
-                <div class="download-options">
-                    <a href="StarClient_Launcher.exe" class="btn-primary">StarClient Launcher</a>
-                    <a href="Star1.8.9.zip" class="btn-secondary">Star 1.8.9 Version</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="screenshot1.png" alt="Screenshot do Star Client mostrando recursos e interface">
-            </div>
-        </div>
-    </section>
+# Ler conteúdo atual
+with open(index_path, "r", encoding="utf-8") as f:
+    html_content = f.read()
 
-    <section id="features" class="features">
-        <h2>Recursos</h2>
-        <div class="features-grid">
-            <div class="card">🚀 <h3>Performance</h3><p>Mais FPS e jogabilidade suave, garantindo o máximo de eficiência sem travamentos.</p></div>
-            <div class="card">🎨 <h3>Customização</h3><p>Mods, HUDs e temas personalizáveis, permitindo que você configure o cliente do seu jeito.</p></div>
-            <div class="card">🛡️ <h3>Segurança</h3><p>Experiência estável e confiável, com atualizações frequentes e foco na proteção dos usuários.</p></div>
-        </div>
-    </section>
+# Criar bloco de links sociais
+social_block = """
+<div class="social-icons">
+  <a href="https://starclientt.netlify.app/" target="_blank" rel="noopener noreferrer">
+    <img src="netlify.svg" alt="Netlify" class="social-icon">
+  </a>
+  <a href="https://discord.gg/YgrFDK6eUF" target="_blank" rel="noopener noreferrer">
+    <img src="discord.svg" alt="Discord" class="social-icon">
+  </a>
+  <a href="https://www.roblox.com/pt/users/7791741127/profile?friendshipSourceType=ProfileShare" target="_blank" rel="noopener noreferrer">
+    <img src="roblox.svg" alt="Roblox" class="social-icon">
+  </a>
+</div>
 
-    <section id="screenshots" class="screenshots">
-        <h2>Screenshots</h2>
-        <div class="screenshot-grid">
-            <img src="screenshot1.png" alt="Interface do Star Client">
-            <img src="screenshot2.png" alt="Menu de Mods do Star Client">
-            <img src="screenshot3.png" alt="Screenshot de gameplay com HUD customizada">
-            <img src="screenshot4.png" alt="Menu de configurações do cliente">
-            <img src="screenshot5.png" alt="Screenshot de capes e cosméticos">
-        </div>
-    </section>
+<style>
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.social-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+.social-icon:hover {
+  transform: scale(1.1);
+}
+</style>
+"""
 
-    <section id="changelog" class="changelog">
-        <h2>Changelog</h2>
-        <div class="log-entry new">Crosshair Mod: 3 new styles</div>
-        <div class="log-entry new">Animations Mod: Smooth sneak setting</div>
-        <div class="log-entry new">Hotbar Mod: New option to use the client theme</div>
-        <div class="log-entry new">Hotbar Mod: New pickup animation setting</div>
-        <div class="log-entry new">New Mod: Female gender cosmetic</div>
-        <div class="log-entry new">New Mod: Cat ears</div>
-        <div class="log-entry new">Client: Added more Language support</div>
-        <div class="log-entry new">Client: Added UI sounds</div>
-        <div class="log-entry new">Client: Added macOS dock icons</div>
-        <div class="log-entry new">HUD: Added new HUD styles</div>
-        <div class="log-entry new">HUD: Added Blurred background option</div>
-        <div class="log-entry new">HUD: Added Mojangles font option</div>
-        <div class="log-entry new">Menus: GuiIngameMenu now uses the Star style</div>
-        <div class="log-entry new">Cosmetics: Added a ton of new capes</div>
-        <div class="log-entry new">Cosmetics: Made Custom capes better</div>
-        <div class="log-entry new">Mod Menu: 10+ new themes</div>
-        <div class="log-entry new">Mod Menu: New home screen</div>
-        <div class="log-entry new">Mod Menu: New Minigames</div>
-        <div class="log-entry improved">Mod Menu: Back buttons in more places</div>
-        <div class="log-entry improved">Mod Menu: Improve the mod menu design</div>
-        <div class="log-entry improved">Mod Menu: Better search system</div>
-        <div class="log-entry improved">Mod Menu: Type to search</div>
-        <div class="log-entry improved">Mod Menu: Arrow keys support</div>
-        <div class="log-entry improved">Mod Menu: Ban warning for modules</div>
-        <div class="log-entry improved">Client: Click out of bounds closes GUIs</div>
-        <div class="log-entry improved">Client: Setup menu redesign</div>
-        <div class="log-entry improved">Client: Star checks for updates</div>
-        <div class="log-entry improved">Client: Rebrand to Star</div>
-        <div class="log-entry improved">Client: Linux & macOS compatibility</div>
-        <div class="log-entry improved">HudEditor: Shift modifier and tooltips</div>
-        <div class="log-entry improved">Cosmetics: Capes now save</div>
-        <div class="log-entry removed">Mods: Remove browser</div>
-        <div class="log-entry removed">Mods: Remove ViaVersion</div>
-        <div class="log-entry removed">Client: Remove Music player</div>
-        <div class="log-entry removed">Client: Remove Soar API</div>
-        <div class="log-entry removed">Client: Remove Soar Premium</div>
-    </section>
+# Inserir antes do </body>
+if "</body>" in html_content:
+    new_html_content = html_content.replace("</body>", social_block + "\n</body>")
+else:
+    new_html_content = html_content + social_block
 
-    <section id="contact" class="contact">
-        <h2>Contato</h2>
-        <p>Entre em contato pelo email: suporte@klyleenb@gmail.com</p>
-    </section>
+# Salvar arquivo editado
+with open(index_path, "w", encoding="utf-8") as f:
+    f.write(new_html_content)
 
-    <footer class="footer">
-        <p>© 2025 Star Client. Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
+"index.html atualizado com os links e ícones."
