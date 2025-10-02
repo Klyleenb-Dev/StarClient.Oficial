@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>StarClient — Redesigned</title>
+  <title>Twayfly Client — Redesigned</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/redesign.css">
@@ -13,9 +13,9 @@
   <div class="page">
     <header class="site-header">
       <div class="brand">
-        <img src="logo.png" alt="StarClient Logo" class="logo" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#26d0ce"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#g)"/><path d="M8 12.5c1.5-2 3-3 6-3" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.2"/></svg>
+        <img src="logo.png" alt="Twayfly Client Logo" class="logo" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#26d0ce"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#g)"/><path d="M8 12.5c1.5-2 3-3 6-3" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.2"/></svg>
         <div class="brand-text">
-          <strong>StarClient</strong>
+          <strong>Twayfly Client</strong>
           <span class="muted">launcher & tools</span>
         </div>
       </div>
@@ -50,7 +50,7 @@
             <div class="line short"></div>
           </div>
           <div class="mock">
-            <h3>StarClient Launcher</h3>
+            <h3>Twayfly Client Launcher</h3>
             <p>Versão <strong>1.0.0</strong></p>
             <div class="download-row">
               <button class="btn">Instalar</button>
@@ -62,14 +62,59 @@
     </main>
 
     <section class="socials">
-      <a href="https://starclientt.netlify.app/" target="_blank">Site</a>
+      <a href="https://Twayfly Clientt.netlify.app/" target="_blank">Site</a>
       <a href="https://discord.gg/YgrFDK6eUF" target="_blank">Discord</a>
       <a href="https://www.roblox.com/pt/users/7791741127/profile?friendshipSourceType=ProfileShare" target="_blank">Roblox</a>
     </section>
 
+    
+    <section class="screenshots">
+      <h2>Screenshots</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="2025-10-02_13.13.54.png" alt="screenshot1">
+          <img src="2025-10-02_13.14.04.png" alt="screenshot2">
+          <img src="2025-10-02_13.14.16.png" alt="screenshot3">
+          <img src="2025-10-02_13.14.29.png" alt="screenshot4">
+          <img src="2025-10-02_13.14.38.png" alt="screenshot5">
+          <img src="2025-10-02_13.14.49.png" alt="screenshot6">
+          <img src="2025-10-02_13.14.55.png" alt="screenshot7">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
     <footer class="site-footer">
-      <p>© 2025 StarClient. Feito com ❤️</p>
+      <p>© 2025 Twayfly Client. Feito com ❤️</p>
     </footer>
   </div>
+
+<script>
+let slideIndex = 0;
+let slides = document.querySelectorAll('.carousel .slides img');
+let dotsContainer = document.querySelector('.carousel .dots');
+slides.forEach((_,i)=>{
+  let d=document.createElement('span');
+  d.classList.add('dot');
+  d.addEventListener('click',()=>{showSlide(i)});
+  dotsContainer.appendChild(d);
+});
+let dots=document.querySelectorAll('.dot');
+function showSlide(n){
+  slides.forEach((s,i)=>{s.style.display=(i===n?'block':'none')});
+  dots.forEach((d,i)=>{d.classList.toggle('active',i===n)});
+  slideIndex=n;
+}
+function nextSlide(){showSlide((slideIndex+1)%slides.length)}
+function prevSlide(){showSlide((slideIndex-1+slides.length)%slides.length)}
+document.querySelector('.next').addEventListener('click',nextSlide);
+document.querySelector('.prev').addEventListener('click',prevSlide);
+function autoPlay(){nextSlide();}
+setInterval(autoPlay,4000);
+showSlide(0);
+</script>
+
 </body>
 </html>
