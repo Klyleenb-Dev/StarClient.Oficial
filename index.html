@@ -10,6 +10,38 @@
   <meta name="theme-color" content="#0f1724">
 </head>
 <body>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="loginTitle">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-panel">
+    <button class="modal-close" id="closeModal" aria-label="Fechar">&times;</button>
+    <h2 id="loginTitle">Entrar — Twayfly Client</h2>
+    <p class="muted">Faça login com sua conta ou use o Google.</p>
+
+    <div class="social-login">
+      <button id="googleSignIn" class="btn google">Sign in with Google</button>
+    </div>
+
+    <div class="or"><span>ou</span></div>
+
+    <form id="loginForm" autocomplete="on">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="seu@exemplo.com">
+
+      <label for="password">Senha</label>
+      <input id="password" name="password" type="password" required placeholder="••••••••">
+
+      <div class="form-actions">
+        <button type="submit" class="btn cta">Entrar</button>
+        <button type="button" id="createAccount" class="btn ghost">Criar conta</button>
+      </div>
+    </form>
+
+    <div id="accountMsg" class="muted small"></div>
+  </div>
+</div>
+
   <div class="page">
     <header class="site-header">
       <div class="brand">
@@ -91,6 +123,7 @@
     </footer>
   </div>
 
+
 <script>
 let slideIndex = 0;
 let slides = document.querySelectorAll('.carousel .slides img');
@@ -103,8 +136,12 @@ slides.forEach((_,i)=>{
 });
 let dots=document.querySelectorAll('.dot');
 function showSlide(n){
-  slides.forEach((s,i)=>{s.style.display=(i===n?'block':'none')});
-  dots.forEach((d,i)=>{d.classList.toggle('active',i===n)});
+  slides.forEach((s,i)=>{
+    s.classList.toggle('active', i===n);
+  });
+  dots.forEach((d,i)=>{
+    d.classList.toggle('active', i===n);
+  });
   slideIndex=n;
 }
 function nextSlide(){showSlide((slideIndex+1)%slides.length)}
@@ -114,6 +151,83 @@ document.querySelector('.prev').addEventListener('click',prevSlide);
 function autoPlay(){nextSlide();}
 setInterval(autoPlay,4000);
 showSlide(0);
+</script>
+
+
+
+<script>
+// Modal open/close binding
+const loginModal = document.getElementById('loginModal');
+const openLoginButtons = document.querySelectorAll('.btn[href="#"], .btn.login-trigger');
+const closeModalBtn = document.getElementById('closeModal');
+const modalBackdrop = document.getElementById('modalBackdrop');
+const loginForm = document.getElementById('loginForm');
+const createAccountBtn = document.getElementById('createAccount');
+const accountMsg = document.getElementById('accountMsg');
+
+function openModal(){ loginModal.setAttribute('aria-hidden','false'); }
+function closeModal(){ loginModal.setAttribute('aria-hidden','true'); accountMsg.textContent=''; loginForm.reset(); }
+
+// Bind header "Entrar" button (it has class .btn and text 'Entrar' in header)
+const headerEntrar = Array.from(document.querySelectorAll('.btn')).find(b=>b.textContent.trim().toLowerCase()==='entrar');
+if(headerEntrar) headerEntrar.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); });
+
+closeModalBtn.addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', closeModal);
+
+// Simple local account system (for demo only)
+// accounts stored in localStorage under key "twayfly_accounts" as object { email: {password, createdAt} }
+function loadAccounts(){ try{ return JSON.parse(localStorage.getItem('twayfly_accounts')||'{}'); }catch(e){return{}} }
+function saveAccounts(obj){ localStorage.setItem('twayfly_accounts', JSON.stringify(obj)); }
+
+loginForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim().toLowerCase();
+  const password = document.getElementById('password').value;
+  const accounts = loadAccounts();
+  if(accounts[email] && accounts[email].password === password){
+    accountMsg.style.color='lightgreen'; accountMsg.textContent='Login bem-sucedido! Você está logado como '+email;
+    // simulate logged-in state (you can replace with real session handling)
+    document.documentElement.setAttribute('data-user', email);
+    setTimeout(closeModal,1200);
+  } else {
+    accountMsg.style.color='salmon'; accountMsg.textContent='Conta não encontrada ou senha incorreta.';
+  }
+});
+
+createAccountBtn.addEventListener('click', ()=>{
+  const email = document.getElementById('email').value.trim().toLowerCase();
+  const password = document.getElementById('password').value;
+  if(!email || !password){ accountMsg.style.color='salmon'; accountMsg.textContent='Preencha email e senha para criar conta.'; return; }
+  const accounts = loadAccounts();
+  if(accounts[email]){ accountMsg.style.color='salmon'; accountMsg.textContent='Já existe conta com esse email.'; return; }
+  accounts[email] = { password: password, createdAt: Date.now() };
+  saveAccounts(accounts);
+  accountMsg.style.color='lightgreen'; accountMsg.textContent='Conta criada com sucesso! Agora clique em Entrar.';
+});
+
+// Google Sign-In placeholder
+const googleBtn = document.getElementById('googleSignIn');
+googleBtn.addEventListener('click', ()=>{
+  // Real Google Sign-In requires a Google Cloud OAuth Client ID and redirect URI.
+  // For a proper "Sign in with Google" you should:
+  // 1. Create an OAuth 2.0 Client ID on Google Cloud Console.
+  // 2. Use Google's OAuth endpoint to request the user's profile (openid email profile).
+  // 3. Handle the OAuth callback on your server (recommended) to securely exchange code for tokens.
+  // Here we'll open a popup to Google's OAuth2 consent screen if you provide CLIENT_ID and redirect URI.
+  const CLIENT_ID = 'YOUR_GOOGLE_OAUTH_CLIENT_ID';
+  const REDIRECT_URI = window.location.origin + '/oauth2callback.html'; // replace with your redirect page
+  const scope = encodeURIComponent('openid email profile');
+  const state = encodeURIComponent('twayfly_'+Math.random().toString(36).slice(2));
+  const oauthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=${scope}&state=${state}`;
+  // If CLIENT_ID is not set, show instruction to developer
+  if(CLIENT_ID === 'YOUR_GOOGLE_OAUTH_CLIENT_ID'){
+    accountMsg.style.color='gold'; accountMsg.textContent='Para ativar o Google Sign-In, adicione seu Google OAuth CLIENT_ID no código.';
+    return;
+  }
+  window.open(oauthUrl, 'google_signin','width=500,height=650');
+});
+
 </script>
 
 </body>
