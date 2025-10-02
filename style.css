@@ -1,7 +1,7 @@
 /* Paleta de Cores e Tipografia */
 :root {
     --cor-fundo: #0d0d0d;
-    --cor-fundo-secundaria: #171c1b; /* 🟢 NOVO: Verde Escuro Sutil, alinhado ao tema da logo */
+    --cor-fundo-secundaria: #171c1b; /* COR REVISADA: Verde Escuro Sutil para Navbar/Cards */
     --cor-texto: #f3f4f6;
     --cor-destaque: #84cc16; /* Verde-Limão Neon */
     --cor-sombra: rgba(132, 204, 22, 0.4); /* Sombra para o efeito Neon Verde */
@@ -47,7 +47,6 @@ a { text-decoration: none; color: inherit; transition: color 0.3s; }
     align-items: center; 
     justify-content: center; 
     padding: 6rem 1rem;
-    /* Gradiente de Verde Escuro Sutil */
     background: linear-gradient(135deg, #102d1d, #0d0d0d 60%); 
 }
 .hero-content { display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; }
